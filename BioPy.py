@@ -82,8 +82,12 @@ def enter_Seq():
 
     return sequence
 
-##############################
-#       UNDER CONSTRUCTION   #
+
+
+
+# FASTA files begin a '>' followed by a title identifying the sequence
+# The line directly under the title is all of the sequence information
+# of that identified in the title.
 
 # Entering Fasta sequences
 def parse_f():
@@ -96,23 +100,30 @@ def parse_f():
 
 # Parsing Fasta formats
 def parse_Fasta(d):
-    results = {}
-    strings = d.strip().split('>')
 
-    for d in strings:
-        if len(d) == 0:
-            continue
+    # Get Title of FASTA
+    d.find('>')
+    entry = d.splitlines(0)
+    title = entry[0]
 
-        parts = d.split()
-        label = parts[0]
-        bases = ''.join(parts[1:])
+    # Rebuild Sequence into String from List
+    sequence = entry[0:]
+    rebuilt_seq = ''
 
-        results[label] = bases
+    for i in range(1,len(sequence)):
+        rebuilt_seq = rebuilt_seq + sequence[i]
+        
+    fasta = fastaObject(title,rebuilt_seq)
 
-    return results
+    return fasta
 
-#      UNDER CONSTRUCTION    #
-##############################
+
+class fastaObject(object):
+    def __init__(self,title,sequence):
+        self.title = title
+        self.sequence = sequence
+    
+
 
 # Compute GC Content
 def get_GC_Content(dna):
@@ -235,7 +246,8 @@ def menu():
         # Length of Sequence 
         elif selection =='7':
             seq = enter_Seq()
-            print '\nLength of Sequence: ' + str(len(seq)) + ' bases long.'
+            length = seq.strip('\n')
+            print '\nLength of Sequence: ' + str(len(length)) + ' bases long.'
 
         # Find Motif in DNA
         elif selection =='8':
@@ -244,10 +256,11 @@ def menu():
             seq2 = enter_Seq()
             print '\nMotif Locations: ' + str(find_Motif(seq1,seq2))
 
-        # FASTA TEST **UNDER CONSTRUCTION**
+        # FASTA TEST 
         elif selection =='9':
             seq = enter_Seq()
-            print str(parse_Fasta(seq))
+            print parse_Fasta(seq).title
+            
 
         # Quits Program
         elif selection =='0':
