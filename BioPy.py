@@ -1,7 +1,7 @@
 # 
 # github.com/ofinley
 # BioPy v1.0
-#
+# Python 2.7.6
 #
 #
 #       TABLE OF CONTENTS
@@ -13,19 +13,23 @@
 #
 #   3. Reverse Complement of DNA
 #
-#   4. Fasta format handling
+#   4. FASTA format handling
 #
-#   5. Compute GC Content
+#   5. FASTA Object
 #
-#   6. Count Point Mutations
+#   6. Compute GC Content
 #
-#   7. Translation RNA to Protein
+#   7. Count Point Mutations
 #
-#   8. Length of Sequence
+#   8. Amino Acid Table
 #
-#   9. Find a Motif in DNA
+#   9. Translation RNA to Protein
 #
-#   10. Program Menu
+#   10. Length of Sequence
+#
+#   11. Find a Motif in DNA
+#
+#   12. Shell Program Menu
 #   ____________________________________
 #
 #
@@ -40,9 +44,12 @@
 #
 #   3.) Add file reading
 #   
-#   4.) Create GUI through Visual Basic
+#   4.) Create GUI through Visual Basic/Other
 #
 #   
+
+
+
 
 # Counts how many of each nucleotide in sample
 def count_nuc(nu):
@@ -67,6 +74,7 @@ def transcribe_DNA(dna):
             rna += nu
     return  rna
 
+
 # Reverse Complement of a DNA strand
 def reverse_Complement(dna):
     rc_dna = ''
@@ -75,13 +83,13 @@ def reverse_Complement(dna):
         rc_dna = com[nu] + rc_dna
     return rc_dna
 
+
 # Enter Sequence
 def enter_Seq():
     print 'Enter Sequence:'
     sequence = raw_input()
 
     return sequence
-
 
 
 
@@ -118,11 +126,15 @@ def parse_Fasta(d):
     return fasta
 
 
+##########################################################
+
 class fastaObject(object):
     def __init__(self,title,sequence):
         self.title = title
         self.sequence = sequence
-    
+        
+##########################################################
+
 
 
 # Compute GC Content
@@ -145,6 +157,7 @@ def count_Point_Mutations(s,t):
         if s[i] <> t[i]:
             result += 1
     return result
+
 
 # Amino Acid Table
 def aa_table(rna):
@@ -169,6 +182,7 @@ def aa_table(rna):
     protein = amino_acids[rna]
 
     return protein
+
 
 # Translates RNA into Protein
 def translation(rna):
@@ -197,6 +211,7 @@ def find_Motif(s,t):
 
     return locations
     
+
  
 # Program Menu | Display Menu for Shell
 def menu():
@@ -244,7 +259,7 @@ def menu():
             seq2 = enter_Seq()
             print '\nNumber of Point Mutations: ' + str(count_Point_Mutations(seq1,seq2))
 
-        # Translate RNA to Protein | Sequence entered must start with AUG!
+        # Translate RNA to Protein | Sequence must contain AUG at the moment!
         elif selection =='6':
             seq = enter_Seq()
             print '\nProtein Sequence: '+ str(translation(seq))
@@ -266,7 +281,8 @@ def menu():
         elif selection =='9':
             seq = enter_Seq()
             print parse_Fasta(seq).title
-            
+
+
         # Quits Program
         elif selection =='0':
             break
