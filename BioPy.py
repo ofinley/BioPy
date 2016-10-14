@@ -146,9 +146,9 @@ def count_Point_Mutations(s,t):
             result += 1
     return result
 
-
-# Translates RNA into Protein
-def translation(rna):
+# Amino Acid Table
+def aa_table(rna):
+    
     amino_acids = {"UUU":"F", "UUC":"F", "UUA":"L", "UUG":"L",
         "UCU":"S", "UCC":"s", "UCA":"S", "UCG":"S",
         "UAU":"Y", "UAC":"Y", "UAA":"STOP", "UAG":"STOP",
@@ -166,14 +166,20 @@ def translation(rna):
         "GAU":"D", "GAC":"D", "GAA":"E", "GAG":"E",
         "GGU":"G", "GGC":"G", "GGA":"G", "GGG":"G",}
 
-    
+    protein = amino_acids[rna]
+
+    return protein
+
+# Translates RNA into Protein
+def translation(rna):
+
     protein_seq = ''
     start = rna.find('AUG')
     sequence = rna[start:]
 
     for i in range(0, len(sequence), 3):
         tablet = sequence[i] + sequence[i+1] + sequence[i+2]
-        protein_seq = protein_seq + amino_acids[tablet]
+        protein_seq = protein_seq + aa_table(tablet)
 
 
     return protein_seq
@@ -260,6 +266,10 @@ def menu():
         elif selection =='9':
             seq = enter_Seq()
             print parse_Fasta(seq).title
+
+        elif selection =='p':
+            seq = enter_Seq()
+            print aa_table(seq)
             
 
         # Quits Program
