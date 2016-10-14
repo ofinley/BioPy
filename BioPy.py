@@ -266,12 +266,7 @@ def menu():
         elif selection =='9':
             seq = enter_Seq()
             print parse_Fasta(seq).title
-
-        elif selection =='p':
-            seq = enter_Seq()
-            print aa_table(seq)
             
-
         # Quits Program
         elif selection =='0':
             break
