@@ -4,6 +4,7 @@ Python bioinformatics script that is able to count nucleotides, find length of s
 
 Functions 
 
+Note: Not all functions currently accept FASTA format.
 
 1.) Count Nucleotides in a sequence
 
