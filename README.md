@@ -75,8 +75,8 @@ Functions
           
 8.) Find Motif in DNA
 
-    Enter a DNA sequence, and then enter a motif to find within that sequence. Returns locations in the sequence to where the 
-    motif is found.
+    Enter a DNA sequence, and then enter a motif to find within that sequence. Returns locations in the sequence to 
+    where the motif is found.
     
     
     Ex.) Input Sequence: ATTTACGACAGTTTAAAAACATCATCCCGG
