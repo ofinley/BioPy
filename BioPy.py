@@ -7,15 +7,15 @@
 #       TABLE OF CONTENTS
 #   ___________________________________
 #
-#   1. Count of nucleotides in sequence
+#   1. FASTA format handling
 #
-#   2. Transcription DNA to RNA
+#   2. FASTA Object
 #
-#   3. Reverse Complement of DNA
+#   3. Counting of Nucleotides
 #
-#   4. FASTA format handling
+#   4. Transcription (DNA to RNA)
 #
-#   5. FASTA Object
+#   5. Reverse Complement of DNA
 #
 #   6. Compute GC Content
 #
@@ -38,7 +38,7 @@
 #   
 #   Current Objectives/Ideas:
 #   
-#   1.) Complete FASTA format handling
+#   1.) Complete FASTA format handling - Completed 
 #
 #   2.) Add more analytical functions / Expand Table of Contents
 #
@@ -51,37 +51,13 @@
 
 
 
-# Counts how many of each nucleotide in sample
-def count_nuc(nu):
-    count = {}
-    count['A'] = 0
-    count['C'] = 0
-    count['T'] = 0
-    count['G'] = 0
 
-    for nucs in nu:
-        count[nucs] += 1
-    return count
+###############################################################################
 
+#   DATA ENTRY
 
-# Transcribes DNA into RNA
-def transcribe_DNA(dna):
-    rna = ''
-    for nu in dna:
-        if nu == 'T':
-            rna+= 'U'
-        else:
-            rna += nu
-    return  rna
+###############################################################################
 
-
-# Reverse Complement of a DNA strand
-def reverse_Complement(dna):
-    rc_dna = ''
-    com =  {'G' : 'C', 'C' : 'G', 'A' : 'T', 'T' : 'A'}
-    for nu in dna:
-        rc_dna = com[nu] + rc_dna
-    return rc_dna
 
 
 # Detecting FASTA sequence
@@ -136,16 +112,82 @@ def parse_Fasta(d):
 
     return fasta
 
+################################################################################
 
-##########################################################
+#   END OF DATA ENTRY                                                          #
+
+################################################################################
+
+
+
+
+
+
+###############################################################################
+
+#   OBJECTS                                                                   #
+
+###############################################################################
+
+
 
 class fastaObject(object):
     def __init__(self,title,sequence):
         self.title = title
         self.sequence = sequence
         
-##########################################################
 
+        
+###############################################################################
+
+#   END OF OBJECTS
+
+###############################################################################
+
+
+
+
+
+
+###############################################################################
+
+#   FUNCTIONS                                                                 #
+
+###############################################################################
+
+
+
+# Counts how many of each nucleotide in sample
+def count_nuc(nu):
+    count = {}
+    count['A'] = 0
+    count['C'] = 0
+    count['T'] = 0
+    count['G'] = 0
+
+    for nucs in nu:
+        count[nucs] += 1
+    return count
+
+
+# Transcribes DNA into RNA
+def transcribe_DNA(dna):
+    rna = ''
+    for nu in dna:
+        if nu == 'T':
+            rna+= 'U'
+        else:
+            rna += nu
+    return  rna
+
+
+# Reverse Complement of a DNA strand
+def reverse_Complement(dna):
+    rc_dna = ''
+    com =  {'G' : 'C', 'C' : 'G', 'A' : 'T', 'T' : 'A'}
+    for nu in dna:
+        rc_dna = com[nu] + rc_dna
+    return rc_dna
 
 
 # Compute GC Content
@@ -221,7 +263,17 @@ def find_Motif(s,t):
             locations.append(i)
 
     return locations
-    
+
+###############################################################################
+
+#   END OF FUNCTIONS                                                          #    
+
+###############################################################################
+
+
+
+
+
 
  
 # Program Menu | Display Menu for Shell
