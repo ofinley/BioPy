@@ -58,10 +58,10 @@ Note: FASTA is now accepted with the latest update.
          
 6.) Translation (RNA to Protein)
 
-    Enter RNA sequence and the sequence is translated to protein using an amino acid table. Note that the sequence must
-    contain the start codon 'AUG' somewhere in the sequence to start translation and the length from 'AUG' to the end
-    of the string must be divisible by three. Stopping at the stop codons or checking the reading frames has not been
-    implemented yet.
+    Enter RNA sequence and the sequence is translated to protein using an amino acid table. Note that the sequence 
+    must contain the start codon 'AUG' somewhere in the sequence to start translation and the length from 'AUG' to
+    the end of the string must be divisible by three. Stopping at the stop codons or checking the reading frames has
+    not been implemented yet.
     
     Ex.) Input Sequence: AAAAAUUCCGAUGGGUGAUGUUAGU
          Result: MGDVS
