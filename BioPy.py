@@ -84,13 +84,24 @@ def reverse_Complement(dna):
     return rc_dna
 
 
+# Detecting FASTA sequence
+def detect_FASTA(string):
+    if '>' in string:
+        return True
+    else:
+        return False
+
 # Enter Sequence
 def enter_Seq():
     print 'Enter Sequence:'
     sequence = raw_input()
 
-    return sequence
-
+    # Detect for FASTA sequence
+    if detect_FASTA(sequence) == True:
+        new_seq = parse_Fasta(sequence)
+        return new_seq.sequence
+    else:
+        return sequence
 
 
 # FASTA files begin a '>' followed by a title identifying the sequence
