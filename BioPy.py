@@ -4,32 +4,39 @@
 # Python 2.7.6
 #
 #
+#   Data Entry/Handling: 1-3
+#   Functions          : 4-12
+#   Shell Program Menu : 13
+#
+#
 #       TABLE OF CONTENTS
 #   ___________________________________
 #
-#   1. FASTA format handling
+#   1. FASTA format handling            
+#                                           
+#   2. FASTA Object                         
 #
-#   2. FASTA Object
+#   3. File Reading/Handling
 #
-#   3. Counting of Nucleotides
+#   4. Counting of Nucleotides
 #
-#   4. Transcription (DNA to RNA)
+#   5. Transcription (DNA to RNA)
 #
-#   5. Reverse Complement of DNA
+#   6. Reverse Complement of DNA
 #
-#   6. Compute GC Content
+#   7. Compute GC Content
 #
-#   7. Count Point Mutations
+#   8. Count Point Mutations
 #
-#   8. Amino Acid Table
+#   9. Amino Acid Table
 #
-#   9. Translation RNA to Protein
+#   10. Translation (RNA to Protein)
 #
-#   10. Length of Sequence
+#   11. Length of Sequence
 #
-#   11. Find a Motif in DNA
+#   12. Find a Motif in DNA
 #
-#   12. Shell Program Menu
+#   13. Shell Program Menu
 #   ____________________________________
 #
 #
@@ -42,7 +49,7 @@
 #
 #   2.) Add more analytical functions / Expand Table of Contents
 #
-#   3.) Add file reading
+#   3.) Add file reading - Completed
 #   
 #   4.) Create GUI through Visual Basic/Other
 #
@@ -111,6 +118,33 @@ def parse_Fasta(d):
     fasta = fastaObject(title,rebuilt_seq)
 
     return fasta
+
+def enter_File():
+    print 'Enter File Path: '
+    file_path = raw_input()
+
+    return file_path
+
+def read_File(f):
+
+    i = open(f)
+    j = i.read()
+
+    if detect_FASTA(j)== True:
+        print 'true'
+        fasta = parse_Fasta(j)
+        print fasta.title
+        print 'sequence found'
+        print fasta.sequence
+    else:
+        print j
+
+    i.close() 
+    
+    
+    
+
+
 
 ################################################################################
 
@@ -290,7 +324,7 @@ def menu():
         print '6) Translate RNA to Protein'
         print '7) Length of Sequence'
         print '8) Find Motif in DNA'
-        print '9) FASTA TEST'
+        print '9) File Read Test'
         print '\nPress 0 to quit'
 
         # Retrieve User input to determine what function to run
@@ -340,10 +374,10 @@ def menu():
             seq2 = enter_Seq()
             print '\nMotif Locations: ' + str(find_Motif(seq1,seq2))
 
-        # FASTA TEST 
+        # Read File Test
         elif selection =='9':
-            seq = enter_Seq()
-            print parse_Fasta(seq).title
+            file_entry = enter_File()
+            read_File(file_entry)
 
 
         # Quits Program
