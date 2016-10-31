@@ -6,9 +6,10 @@ You can download Python 2.7.12 at https://www.python.org/downloads/. GUI used fo
 With the latest update, file reading has been implemented and being tested.
 
 
-Functions 
 
-Note: FASTA is now accepted with the latest update.
+Current BioPy Functions 
+-----------------------------------------
+Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into any function and works as if only a sequence was entered.
 
 1.) Count Nucleotides in a sequence
 
