@@ -7,6 +7,9 @@ With the latest update, file reading has been implemented and being tested.
 
 
 
+
+
+
 Current BioPy Functions 
 -----------------------------------------
 Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into any function and works as if only a sequence was entered.
