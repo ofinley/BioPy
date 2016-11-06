@@ -1,7 +1,9 @@
 # BioPy
 Python bioinformatics script that is able to count nucleotides, find length of sequence, transcription DNA to RNA, reverse complement of DNA, compute GC content, count point mutations, translate RNA to protein, and find a motif in DNA. More analytical functions to be added as well as implementing FASTA format handling, and file reading. Currently runs in Python 2.7.12.
 
-Currently the BioPy GUI does not work correctly. Playing around with the Tkinter package in Python to learn how to utilize it properly to give BioPy a well organized and easy to use GUI.
+Currently the BioPy GUI does not work correctly. Playing around with the Tkinter and Kivy package in Python to learn how to utilize it properly to give BioPy a well organized and easy to use GUI.
+
+Kivy is available at https://kivy.org/#download.
 
 You can download Python 2.7.12 at https://www.python.org/downloads/. GUI used for BioPy development is IDLE.
 
