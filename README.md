@@ -17,6 +17,7 @@ Current BioPy Functions
 Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into any function and works as if only a sequence was entered.
 
 1.) Count Nucleotides in a sequence
+_____________________________________
 
     Enter a DNA sequence and returns the number of 'A','T','C', and 'G' present. Only works for DNA currently.
     
@@ -25,6 +26,7 @@ Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into 
          
 
 2.) Transcription (DNA to RNA)
+_________________________________
   
     Enter a DNA sequence and converts it to RNA.
     
@@ -33,6 +35,7 @@ Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into 
          
          
 3.) Reverse Complement of DNA
+_________________________________
 
     Enter a DNA sequence and returns the reverse complement of the input.
     
@@ -41,6 +44,7 @@ Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into 
          
          
 4.) FASTA Object/Handling
+_________________________________
     
     Enter a sequence with a FASTA format and converts the input into a FASTA object that contains
     the title of the sequence, and the sequence itself. Useful for parsing data.
@@ -59,6 +63,7 @@ Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into 
           
 
 5.) Compute GC Content
+_________________________________
 
     Enter DNA or RNA sequence and computes how many 'G' and 'C' occur within the sequence and returns a percentage.
     
@@ -67,6 +72,7 @@ Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into 
          
          
 6.) Translation (RNA to Protein)
+_________________________________
 
     Enter RNA sequence and the sequence is translated to protein using an amino acid table. Note that the sequence 
     must contain the start codon 'AUG' somewhere in the sequence to start translation and the length from 'AUG' to
@@ -78,6 +84,7 @@ Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into 
          
          
 7.) Sequence Length
+_________________________________
  
      Enter DNA, RNA, or protein sequence and returns the length of the sequence/string.
      
@@ -87,6 +94,7 @@ Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into 
           
           
 8.) Find Motif in DNA
+_________________________________
 
     Enter a DNA sequence, and then enter a motif to find within that sequence. Returns locations in the sequence to 
     where the motif is found.
@@ -98,6 +106,7 @@ Note: FASTA is now accepted with the latest update. Enter a FASTA sequence into 
 
 
 9.) File Read Test
+_________________________________
 
     Enter a path to a text file containing a FASTA sequence or raw text sequence and BioPy will read it.
     
