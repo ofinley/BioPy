@@ -30,6 +30,13 @@ class Application(Frame):
         bottom = Label(m2, text="Buttons go here?")
         m2.add(bottom)
 
+        #Buttons
+        b1 = Button(m2, text='Test Button',command=None)
+        
+        #Button Size
+        b1.config(height=1,width=1)
+        
+        m.add(b1)
                 
         
 
@@ -43,7 +50,14 @@ class Application(Frame):
 #top.mainloop()
 root = Tk()
 app = Application(master=root)
+
+# Title of Window
 app.master.title("BioPy v.1.0")
+
+# Size of Window
+app.master.minsize(width=600, height=450)
+
+# Menu Bar
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="New")
@@ -75,7 +89,8 @@ menubar.add_cascade(label="Help", menu=helpmenu)
 
 root.config(menu=menubar)
 
+# Run GUI
 app.mainloop()
-root.destroy()
+
 
 
